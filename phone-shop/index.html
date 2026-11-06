@@ -7,15 +7,15 @@
     <title>Phone Repair Service</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
 
     <div class="container">
         <h1>Phone Repair Service</h1>
         <p>Tell us about your phone and the problem you are facing.</p>
 
-      
-</section>
+        <!-- REPAIR FORM STARTS HERE -->
+        <form id="repairForm">
 
             <label for="phoneName">Phone Name / Brand</label>
             <input
@@ -33,7 +33,7 @@
                 required
             >
 
-            <label for="problem">Phone Problem</label>
+            <label for="problem">Phone Problem / Repair Service</label>
             <select id="problem" required>
                 <option value="">Select the problem</option>
                 <option value="Broken Screen">Broken Screen</option>
@@ -45,9 +45,19 @@
                 <option value="Phone screen replacement">Phone screen replacement</option>
                 <option value="Phone locking">Phone locking</option>
                 <option value="Mouthpiece problem">Mouthpiece problem</option>
-                 <option value="Speaker problem">Speaker problem</option>
+                <option value="Speaker problem">Speaker problem</option>
                 <option value="Other">Other Problem</option>
-            </select> 
+            </select>
+
+            <label for="problemTime">When did the problem start?</label>
+            <select id="problemTime" required>
+                <option value="">Select when it happened</option>
+                <option value="Today">Today</option>
+                <option value="Yesterday">Yesterday</option>
+                <option value="Last week">Last week</option>
+                <option value="Last month">Last month</option>
+                <option value="More than a month ago">More than a month ago</option>
+            </select>
 
             <label for="details">Describe the Problem</label>
             <textarea
@@ -55,77 +65,63 @@
                 placeholder="Explain what happened to your phone..."
                 rows="4"
             ></textarea>
-            
-<label for="problemTime">When did the problem start?</label>
-
-<select id="problemTime" required>
-    <option value="">Select when it happened</option>
-    <option value="Today">Today</option>
-    <option value="Yesterday">Yesterday</option>
-    <option value="Last week">Last week</option>
-    <option value="Last month">Last month</option>
-    <option value="More than a month ago">More than a month ago</option>
-</select>
-
 
             <button type="submit">Submit Repair Request</button>
 
         </form>
+        <!-- REPAIR FORM ENDS HERE -->
 
         <p id="message"></p>
     </div>
-<!-- IMAGE SLIDER -->
-<section class="hero-slider">
 
-    <div class="slide active">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600"
-             alt="Modern smartphone">
+    <!-- IMAGE SLIDER -->
+    <section class="hero-slider">
 
-        <div class="slide-content">
-            <h1>Fast & Reliable Phone Repairs</h1>
-            <p>We fix broken screens, battery problems and more.</p>
-            <a href="#repairForm" class="hero-btn">Request a Repair</a>
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600"
+                 alt="Modern smartphone">
+
+            <div class="slide-content">
+                <h1>Fast & Reliable Phone Repairs</h1>
+                <p>We fix broken screens, battery problems and more.</p>
+                <a href="#repairForm" class="hero-btn">Request a Repair</a>
+            </div>
         </div>
-    </div>
 
-    <div class="slide">
-        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1600"
-             alt="Smartphone technology">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1600"
+                 alt="Smartphone technology">
 
-        <div class="slide-content">
-            <h1>Your Phone Deserves the Best</h1>
-            <p>Professional repairs you can trust.</p>
-            <a href="#repairForm" class="hero-btn">Book a Repair</a>
+            <div class="slide-content">
+                <h1>Your Phone Deserves the Best</h1>
+                <p>Professional repairs you can trust.</p>
+                <a href="#repairForm" class="hero-btn">Book a Repair</a>
+            </div>
         </div>
-    </div>
 
-    <div class="slide">
-        <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1600"
-             alt="Mobile phone">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1600"
+                 alt="Mobile phone">
 
-        <div class="slide-content">
-            <h1>Don't Replace It. Repair It!</h1>
-            <p>Affordable solutions for your damaged phone.</p>
-            <a href="#repairForm" class="hero-btn">Get Started</a>
+            <div class="slide-content">
+                <h1>Don't Replace It. Repair It!</h1>
+                <p>Affordable solutions for your damaged phone.</p>
+                <a href="#repairForm" class="hero-btn">Get Started</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Slider buttons -->
-    <button class="prev" type="button" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="next" type="button" onclick="changeSlide(1)">&#10095;</button>
+        <button class="prev" type="button" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" type="button" onclick="changeSlide(1)">&#10095;</button>
 
-    <!-- Slider indicators -->
-    <div class="dots">
-        <button class="dot active" type="button" onclick="currentSlide(0)" aria-label="Slide 1"></button>
-        <button class="dot" type="button" onclick="currentSlide(1)" aria-label="Slide 2"></button>
-        <button class="dot" type="button" onclick="currentSlide(2)" aria-label="Slide 3"></button>
-    </div>
-    
+        <div class="dots">
+            <button class="dot active" type="button" onclick="currentSlide(0)" aria-label="Slide 1"></button>
+            <button class="dot" type="button" onclick="currentSlide(1)" aria-label="Slide 2"></button>
+            <button class="dot" type="button" onclick="currentSlide(2)" aria-label="Slide 3"></button>
+        </div>
 
-</section>
+    </section>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>
-
