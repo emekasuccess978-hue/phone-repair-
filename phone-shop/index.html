@@ -1,127 +1,118 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Repair Service</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone Repair Service</title>
+  <meta name="description" content="Fast and reliable phone repairs. Tell us your problem and chat with us on WhatsApp." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <main class="layout">
+    <!-- Repair request form -->
+    <section class="form-card" id="request">
+      <h1>Phone Repair Service</h1>
+      <p class="subtitle">Tell us about your phone and the problem you are facing.</p>
 
-    <div class="container">
-        <h1>Phone Repair Service</h1>
-        <p>Tell us about your phone and the problem you are facing.</p>
-
-        <!-- REPAIR FORM STARTS HERE -->
-        <form id="repairForm">
-
-            <label for="phoneName">Phone Name / Brand</label>
-            <input
-                type="text"
-                id="phoneName"
-                placeholder="e.g. Samsung, iPhone, Tecno"
-                required
-            >
-
-            <label for="modelNumber">Phone Model Number</label>
-            <input
-                type="text"
-                id="modelNumber"
-                placeholder="e.g. Samsung SM-A145F"
-                required
-            >
-
-            <label for="problem">Phone Problem / Repair Service</label>
-            <select id="problem" required>
-                <option value="">Select the problem</option>
-                <option value="Broken Screen">Broken Screen</option>
-                <option value="Battery Problem">Battery Problem</option>
-                <option value="Charging Problem">Charging Problem</option>
-                <option value="Water Damage">Water Damage</option>
-                <option value="Phone Not Turning On">Phone Not Turning On</option>
-                <option value="Software Problem">Software Problem</option>
-                <option value="Phone screen replacement">Phone screen replacement</option>
-                <option value="Phone locking">Phone locking</option>
-                <option value="Mouthpiece problem">Mouthpiece problem</option>
-                <option value="Speaker problem">Speaker problem</option>
-                <option value="Other">Other Problem</option>
-            </select>
-
-            <label for="problemTime">When did the problem start?</label>
-            <select id="problemTime" required>
-                <option value="">Select when it happened</option>
-                <option value="Today">Today</option>
-                <option value="Yesterday">Yesterday</option>
-                <option value="Last week">Last week</option>
-                <option value="Last month">Last month</option>
-                <option value="More than a month ago">More than a month ago</option>
-            </select>
-
-            <label for="details">Describe the Problem</label>
-            <textarea
-                id="details"
-                placeholder="Explain what happened to your phone..."
-                rows="4"
-            ></textarea>
-
-            <button type="submit">Submit Repair Request</button>
-
-        </form>
-        <!-- REPAIR FORM ENDS HERE -->
-
-        <p id="message"></p>
-    </div>
-
-    <!-- IMAGE SLIDER -->
-    <section class="hero-slider">
-
-        <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600"
-                 alt="Modern smartphone">
-
-            <div class="slide-content">
-                <h1>Fast & Reliable Phone Repairs</h1>
-                <p>We fix broken screens, battery problems and more.</p>
-                <a href="#repairForm" class="hero-btn">Request a Repair</a>
-            </div>
+      <form id="repairForm" novalidate>
+        <div class="field">
+          <label for="name">Your Name <span class="optional">(optional)</span></label>
+          <input type="text" id="name" name="name" placeholder="e.g. Ada" autocomplete="name" maxlength="60" />
         </div>
 
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1600"
-                 alt="Smartphone technology">
-
-            <div class="slide-content">
-                <h1>Your Phone Deserves the Best</h1>
-                <p>Professional repairs you can trust.</p>
-                <a href="#repairForm" class="hero-btn">Book a Repair</a>
-            </div>
+        <div class="field">
+          <label for="brand">Phone Name / Brand</label>
+          <input type="text" id="brand" name="brand" placeholder="e.g. iPhone, Samsung, Tecno" maxlength="60" required />
+          <p class="error" id="brand-error" role="alert"></p>
         </div>
 
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1600"
-                 alt="Mobile phone">
-
-            <div class="slide-content">
-                <h1>Don't Replace It. Repair It!</h1>
-                <p>Affordable solutions for your damaged phone.</p>
-                <a href="#repairForm" class="hero-btn">Get Started</a>
-            </div>
+        <div class="field">
+          <label for="model">Phone Model Number</label>
+          <input type="text" id="model" name="model" placeholder="e.g. iPhone 14 Pro Max" maxlength="60" required />
+          <p class="error" id="model-error" role="alert"></p>
         </div>
 
-        <button class="prev" type="button" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" type="button" onclick="changeSlide(1)">&#10095;</button>
-
-        <div class="dots">
-            <button class="dot active" type="button" onclick="currentSlide(0)" aria-label="Slide 1"></button>
-            <button class="dot" type="button" onclick="currentSlide(1)" aria-label="Slide 2"></button>
-            <button class="dot" type="button" onclick="currentSlide(2)" aria-label="Slide 3"></button>
+        <div class="field">
+          <label for="problem">Phone Problem / Repair Service</label>
+          <select id="problem" name="problem" required>
+            <option value="" disabled selected>Select a problem</option>
+            <option>Cracked / Broken Screen</option>
+            <option>Battery Problem</option>
+            <option>Charging Port Problem</option>
+            <option>Water Damage</option>
+            <option>Camera Problem</option>
+            <option>Speaker / Microphone Problem</option>
+            <option>Phone Not Turning On</option>
+            <option>Software / Slow Phone</option>
+            <option>Other</option>
+          </select>
+          <p class="error" id="problem-error" role="alert"></p>
         </div>
 
+        <div class="field">
+          <label for="started">When did the problem start?</label>
+          <select id="started" name="started" required>
+            <option value="" disabled selected>Select a time</option>
+            <option>Today</option>
+            <option>A few days ago</option>
+            <option>Last week</option>
+            <option>Last month</option>
+            <option>More than a month ago</option>
+          </select>
+          <p class="error" id="started-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="description">Describe the Problem</label>
+          <textarea id="description" name="description" rows="4" maxlength="1000" placeholder="What is happening with the phone?" required></textarea>
+          <p class="error" id="description-error" role="alert"></p>
+        </div>
+
+        <!-- Honeypot field to block bots (hidden from real users) -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit Repair Request</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
-    <script src="script.js"></script>
+    <!-- Hero slider -->
+    <section class="slider" id="slider" aria-roledescription="carousel" aria-label="Repair services">
+      <div class="slides">
+        <article class="slide active slide-1" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="slide-text">
+            <h2>Fast &amp; Reliable Phone Repairs</h2>
+            <p>We fix broken screens, battery problems and more.</p>
+            <a href="#request" class="cta">Request a Repair</a>
+          </div>
+        </article>
 
+        <article class="slide slide-2" aria-roledescription="slide" aria-label="2 of 3">
+          <div class="slide-text">
+            <h2>Screens Replaced While You Wait</h2>
+            <p>Cracked or dead display? Most screen swaps are done the same day.</p>
+            <a href="#request" class="cta">Request a Repair</a>
+          </div>
+        </article>
+
+        <article class="slide slide-3" aria-roledescription="slide" aria-label="3 of 3">
+          <div class="slide-text">
+            <h2>Battery, Charging &amp; Water Damage</h2>
+            <p>Tell us what happened and we will reply on WhatsApp with a quote.</p>
+            <a href="#request" class="cta">Request a Repair</a>
+          </div>
+        </article>
+      </div>
+
+      <button class="arrow prev" id="prevBtn" aria-label="Previous slide">&#8249;</button>
+      <button class="arrow next" id="nextBtn" aria-label="Next slide">&#8250;</button>
+      <div class="dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
