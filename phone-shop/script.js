@@ -1,7 +1,7 @@
  /* ===== Settings ===== */
 // Used ONLY if the backend can't be reached. Country code + number, digits only.
 // Example (Nigeria): 08012345678 -> 2348012345678
-const FALLBACK_WHATSAPP = "2348012345678";
+const FALLBACK_WHATSAPP = "2349049465038";
 const SHOP_NAME = "Phone Repair Service";
 const SLIDE_INTERVAL_MS = 5000;
 
